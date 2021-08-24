@@ -1,0 +1,51 @@
+# This workflow will install Python dependencies, run tests and lint with a single version of Python
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
+
+name: DTracker application
+
+on:
+  push:
+    branches: [ main ]
+  # schedule:
+    # - cron: '0 5-13/2 * * 1-5'
+  # workflow_dispatch:
+  #   inputs:
+  #   invoker:
+  #     description: 'Name Of Invoker'
+  #     required: false
+  #     default: 'Manual Invoke'
+
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.9
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.9
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install flake8 pytest
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+    - name: Run Python Script
+      run: |
+        python tracker.py
+    # - name: Save Artifact
+    #   uses: actions/upload-artifact@v2
+    #   with:
+    #     name: psxData.txt
+    #     path: data.txt
+
+    - name: Push To Repository
+      run: |
+        date > generated.txt
+        git config user.name github-actions
+        git config user.email github-actions@github.com
+        git add .
+        git commit -m "Auto Push"
+        git push

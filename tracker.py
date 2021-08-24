@@ -3,7 +3,7 @@ import bs4
 import json
 from urllib import request
 
-url = "https://www.daraz.pk/products/vantime-for-infinix-note-7-case-hard-camera-protect-ring-finger-stand-holder-cover-i204998687-s1406678185.html?spm=a2a0e.searchlist.list.1.3d38419556cwFl&search=1"
+url = "https://www.daraz.pk/products/360-degree-water-saving-tap-aerator-diffuser-faucet-nozzel-swivel-head-aerator-clip-fan-faucet-tap-anti-splash-tap-kitchen-shower-splash-i190654494-s1381690489.html?dsource=share&laz_share_info=14382023_100_100_600039546476_13337830_null&laz_token=070de784337c77f760b29a324f9bb42e"
 
 response = request.urlopen(url)
 page_source = response.read()
@@ -23,25 +23,16 @@ jsonObj = json.loads(substring)
 
 skuInfos = jsonObj["data"]["root"]["fields"]["skuInfos"]
 
+stock_count = list()
 for skuInfo in skuInfos:
     print(skuInfos[skuInfo]["stock"])
-
-
-
-
-# table=soup.find('table')
-
-# headers=[ heading.text for heading in table.find_all('th')]
-
-# table_rows=[ row for row in table.find_all('tr')]
-
-# results=[{headers[index]:cell.text for index,cell in enumerate(row.find_all("td")) }for row in table_rows]
-
-# print(json.dumps(results))
+    # stock_count.append("SKU " + str(skuInfo) + " --- STOCK : " + str(skuInfos[skuInfo]["stock"]))
 
 with open('data.txt', 'w', encoding="utf-8") as outfile:
     # outfile.write(substring)
     json.dump(substring, outfile)
+
+print(stock_count)
 
 
 print('Success')
