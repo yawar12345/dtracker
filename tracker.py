@@ -4,7 +4,7 @@ import json
 from urllib import request
 
 url = "https://www.daraz.pk/products/best-quality-peel-off-nail-paints-or-polish-pack-of-100-artificial-nails-with-glue-false-nails-acrylic-nails-kit-french-nails-multicolor-pack-of-6-nail-paints-i220983176-s1434986421.html?dsource=share&laz_share_info=14391127_100_100_600039546476_13346934_null&laz_token=e5c97959d297e728a1eb33ada9874271"
-
+ 
 response = request.urlopen(url)
 page_source = response.read()
 
