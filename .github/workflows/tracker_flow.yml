@@ -7,7 +7,7 @@ on:
   push:
     branches: [ main ]
   schedule:
-    - cron: '0 16 * * 0-7'
+    - cron: '0 5-13/2 * * 1-5'
   # workflow_dispatch:
   #   inputs:
   #   invoker:
