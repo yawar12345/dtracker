@@ -8,6 +8,7 @@ url = "https://www.daraz.pk/products/best-quality-peel-off-nail-paints-or-polish
 response = request.urlopen(url)
 page_source = response.read()
 
+
 strSource = page_source.decode('utf-8')
 
 startIndex = strSource.find('{"data"')
