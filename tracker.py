@@ -39,7 +39,7 @@ for url in Lines:
     for skuInfo in skuInfos:
         i += 1
         name = ''
-        if skuInfo == specs[skuInfo]:
+        if skuInfo != '0' && skuInfo == specs[skuInfo]:
             name = specs[skuInfo]["boxContent"]
             print(name)
         print(skuInfos[skuInfo]["stock"])
