@@ -3,7 +3,7 @@ import bs4
 import json
 from urllib import request
 
-url = "https://www.daraz.pk/products/360-degree-water-saving-tap-aerator-diffuser-faucet-nozzel-swivel-head-aerator-clip-fan-faucet-tap-anti-splash-tap-kitchen-shower-splash-i190654494-s1381690489.html?dsource=share&laz_share_info=14382023_100_100_600039546476_13337830_null&laz_token=070de784337c77f760b29a324f9bb42e"
+url = "https://www.daraz.pk/products/best-quality-mini-hair-straightener-and-straightner-travel-mini-hair-flat-iron-ceramic-plate-hair-straightener-best-for-traveling-gifts-outing-i221047490-s1435161574.html?spm=a2a0e.searchlist.list.9.424dbfbewter4p&search=1"
 
 response = request.urlopen(url)
 page_source = response.read()
