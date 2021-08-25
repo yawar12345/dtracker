@@ -3,6 +3,16 @@ import bs4
 import json
 from urllib import request
 
+# Using readlines()
+file1 = open('urls.txt', 'r')
+Lines = file1.readlines()
+ 
+count = 0
+# Strips the newline character
+for line in Lines:
+    count += 1
+    print("Line{}: {}".format(count, line.strip()))
+
 url = "https://www.daraz.pk/products/best-quality-peel-off-nail-paints-or-polish-pack-of-100-artificial-nails-with-glue-false-nails-acrylic-nails-kit-french-nails-multicolor-pack-of-6-nail-paints-i220983176-s1434986421.html?dsource=share&laz_share_info=14391127_100_100_600039546476_13346934_null&laz_token=e5c97959d297e728a1eb33ada9874271"
  
 response = request.urlopen(url)
@@ -39,6 +49,6 @@ print(stock_count)
 my_string = '\n'.join(map(str, stock_count)) 
 print(my_string)
 requests.get("https://api.telegram.org/bot1987340011:AAGQVebsO9YguKsrGMWoSolnvI2jRwfJeik/sendMessage?chat_id=1010879813&text="+my_string)
-requests.get("https://api.telegram.org/bot1987340011:AAGQVebsO9YguKsrGMWoSolnvI2jRwfJeik/sendMessage?chat_id=447905121&text="+my_string)
+# requests.get("https://api.telegram.org/bot1987340011:AAGQVebsO9YguKsrGMWoSolnvI2jRwfJeik/sendMessage?chat_id=447905121&text="+my_string)
 
 print('Success')
