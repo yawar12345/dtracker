@@ -26,7 +26,7 @@ skuInfos = jsonObj["data"]["root"]["fields"]["skuInfos"]
 stock_count = list()
 for skuInfo in skuInfos:
     print(skuInfos[skuInfo]["stock"])
-    # stock_count.append("SKU " + str(skuInfo) + " --- STOCK : " + str(skuInfos[skuInfo]["stock"]))
+    stock_count.append("SKU " + skuInfo + " --- STOCK : " + str(skuInfos[skuInfo]["stock"]))
 
 with open('data.txt', 'w', encoding="utf-8") as outfile:
     # outfile.write(substring)
@@ -34,5 +34,9 @@ with open('data.txt', 'w', encoding="utf-8") as outfile:
 
 print(stock_count)
 
+# Send Message
+my_string = '\n'.join(map(str, stock_count)) 
+print(my_string)
+requests.get("https://api.telegram.org/bot1987340011:AAGQVebsO9YguKsrGMWoSolnvI2jRwfJeik/sendMessage?chat_id=1010879813&text="+my_string)
 
 print('Success')
