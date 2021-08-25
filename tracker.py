@@ -39,5 +39,6 @@ print(stock_count)
 my_string = '\n'.join(map(str, stock_count)) 
 print(my_string)
 requests.get("https://api.telegram.org/bot1987340011:AAGQVebsO9YguKsrGMWoSolnvI2jRwfJeik/sendMessage?chat_id=1010879813&text="+my_string)
+requests.get("https://api.telegram.org/bot1987340011:AAGQVebsO9YguKsrGMWoSolnvI2jRwfJeik/sendMessage?chat_id=447905121&text="+my_string)
 
 print('Success')
