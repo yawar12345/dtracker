@@ -31,10 +31,17 @@ for url in Lines:
     # print(y["data"]["root"]["fields"]["skuInfos"])
 
     skuInfos = jsonObj["data"]["root"]["fields"]["skuInfos"]
+    specs = jsonObj["data"]["root"]["fields"]["specifications"]
 
     stock_count = list()
     stock_count.append(jsonObj["data"]["root"]["fields"]["seller"]["name"])
+    i = 0
     for skuInfo in skuInfos:
+        i += 1
+        name = ''
+        if skuInfo == specs[skuInfo]:
+            name = specs[skuInfo]["boxContent"]
+            print(name)
         print(skuInfos[skuInfo]["stock"])
         stock_count.append("SKU " + skuInfo + " --- STOCK : " + str(skuInfos[skuInfo]["stock"]))
 
@@ -47,7 +54,7 @@ for url in Lines:
     # Send Message
     my_string = '\n'.join(map(str, stock_count)) 
     print(my_string)
-    requests.get("https://api.telegram.org/bot1987340011:AAGQVebsO9YguKsrGMWoSolnvI2jRwfJeik/sendMessage?chat_id=1010879813&text="+my_string)
+#     requests.get("https://api.telegram.org/bot1987340011:AAGQVebsO9YguKsrGMWoSolnvI2jRwfJeik/sendMessage?chat_id=1010879813&text="+my_string)
     # requests.get("https://api.telegram.org/bot1987340011:AAGQVebsO9YguKsrGMWoSolnvI2jRwfJeik/sendMessage?chat_id=447905121&text="+my_string)
 
     print('Success')
