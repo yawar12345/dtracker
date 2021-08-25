@@ -8,12 +8,12 @@ url = "https://www.daraz.pk/products/360-degree-water-saving-tap-aerator-diffuse
 response = request.urlopen(url)
 page_source = response.read()
 
-str = page_source.decode('utf-8')
+strSource = page_source.decode('utf-8')
 
-startIndex = str.find('{"data"')
-endIndex = str.find('["module_popups"]}}}')
+startIndex = strSource.find('{"data"')
+endIndex = strSource.find('["module_popups"]}}}')
 
-substring = str[startIndex:endIndex+20]
+substring = strSource[startIndex:endIndex+20]
 
 # print(substring)
 
