@@ -14,7 +14,7 @@ count = 0
 # Strips the newline character
 for url in Lines:
     count += 1
-    print("Line{}: {}".format(count, line.strip())) 
+    print("Line{}: {}".format(count, url.strip())) 
     response = request.urlopen(url)
     page_source = response.read()
     strSource = page_source.decode('utf-8')
