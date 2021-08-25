@@ -33,6 +33,7 @@ for url in Lines:
     skuInfos = jsonObj["data"]["root"]["fields"]["skuInfos"]
 
     stock_count = list()
+    stock_count.append(jsonObj["data"]["root"]["fields"]["seller"]["name"])
     for skuInfo in skuInfos:
         print(skuInfos[skuInfo]["stock"])
         stock_count.append("SKU " + skuInfo + " --- STOCK : " + str(skuInfos[skuInfo]["stock"]))
