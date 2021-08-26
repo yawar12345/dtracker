@@ -35,6 +35,7 @@ for url in Lines:
 
     stock_count = list()
     stock_count.append(jsonObj["data"]["root"]["fields"]["seller"]["name"])
+    stock_count.append(jsonObj["data"]["root"]["fields"]["product"]["title"])
     i = 0
     for skuInfo in skuInfos:
         i += 1
