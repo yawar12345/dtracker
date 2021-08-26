@@ -34,8 +34,8 @@ for url in Lines:
     specs = jsonObj["data"]["root"]["fields"]["specifications"]
 
     stock_count = list()
-#     stock_count.append(jsonObj["data"]["root"]["fields"]["seller"]["name"])
     stock_count.append(jsonObj["data"]["root"]["fields"]["product"]["title"])
+    stock_count.append(jsonObj["data"]["root"]["fields"]["seller"]["name"])
     i = 0
     for skuInfo in skuInfos:
         i += 1
