@@ -32,10 +32,12 @@ for url in Lines:
 
     skuInfos = jsonObj["data"]["root"]["fields"]["skuInfos"]
     specs = jsonObj["data"]["root"]["fields"]["specifications"]
-
+    store_name = jsonObj["data"]["root"]["fields"]["seller"]["name"].replace('&', 'n')
+    
     stock_count = list()
+    stock_count.append(store_name)
+    stock_count.append('\n')
     stock_count.append(jsonObj["data"]["root"]["fields"]["product"]["title"])
-    stock_count.append(jsonObj["data"]["root"]["fields"]["seller"]["name"])
     i = 0
     for skuInfo in skuInfos:
         i += 1
