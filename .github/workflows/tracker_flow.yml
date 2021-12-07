@@ -4,8 +4,8 @@
 name: DTracker application
 
 on:
-#   push:
-#     branches: [ main ]
+  push:
+      branches: [ main ]
   schedule:
     - cron: '30 15 * * *'
   # workflow_dispatch:
